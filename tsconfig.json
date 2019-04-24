@@ -1,32 +1,72 @@
 {
     "compilerOptions": {
-        "target": "es5",
-        "lib": [
+        /* Основные опции */
+        "target": "esnext",                             /* Указывается EcmaScript нужной верси: "es3", "es5", "es2015", "es2016", "es2017", "es2017" или "esNext" */
+        "module": "commonjs",                           /* Определить модуль для генерации кода: "none"(нет), "amd", "system", "umd", "es2015" или "esNext" */
+        "lib": [                                    /* Файлы библиотеки для включения в компиляцию */
             "dom",
             "dom.iterable",
             "esnext"
         ],
-        "allowJs": true,
-        "alwaysStrict": true,
+        "allowJs": true,                            /* true - позволяет компилировать js файлы */
+        // "checkJs": true,                             /* Сообщает об ошибках в .js файлах */
+        "jsx": "preserve",                          /* Указывает генерацию кода JSX: "preserve(сохранять)", "react-native" или "react" */
+        // "declaration": true,                            /* Генерирует файл с расширением .d.ts */
+        // "declarationMap": true,                   /* Созадем sourcemap для каждого файла с расширением ".d.ts" */
+        // "sourceMap": true,                       /* Генерирует файл с расширением ".map" */
+        // "outFile": "./",                        /* Объединяет и выводит выходные данные в один файл */
+        // "outDir": "lib",                          /* Перенаправляет структуру вывода в католог. */
+        // "rootDir": "./",                       /* Указываете корневой каталог входных данных. Используйте для управления выходной стуктуры каталогов "--outDir" */
+        // "composite": true,                     /* Включить компиляцию проекта */
+        // "removeComments": true,                /* Не содает комментации для вывода */
+        // "noEmit": true,                           /* Не выделять выводы */
+        // "importHelpers": true,                 /* Подключение помошников из "tslib" */
+        // "downlevelIteration": true,            /* Обеспечивает полную поддержку итерируемых объектов в "for-of", "spread", и деструтуризируется при ориентации на "es5" или "es3" */ 
+        // "isolatedModules": true,                /* Транспилирует каждый файл как отдельный модуль (аналогично "ts.transpileModule") */
+        
+        /* Строгая проверка типов параметров */
+        "strict": true,                           /* Включить все строгие параметры проверки типов */
+        "noImplicitAny": true,                    /* Вызывает ошибку в выражениях и объявлениях когда указывается тип "any" */
+        "strictNullChecks": true,                 /* Включить строгую проверку */ 
+        "strictFunctionTypes": true,              /* Включить строгую проверку типов функций */ 
+        "strictPropertyInitialization": true,     /* Включить строгую проверку инициализации свойств в классах */
+        "noImplicitThis": true,                   /* Возникает ошибка на "this" выражение с предпологаемым типом "any" */  
+        "alwaysStrict": true,                     /* Синтаксический анализ в строгом режиме и выдача "use strict" для каждого исходного файла */  
+
+        /* Дополнительная проверка */
+        "noUnusedLocals": true,                   /* Сообщить об ошибках на неиспользуемые locals  */
+        "noUnusedParameters": true,               /* Сообщать об ошибках по неиспользуемые параметры. */
+        "noImplicitReturns": true,                /* Сообщение об ошибке, если не все пути кода в функции возвращают значение. */
+        // "noFallthroughCasesInSwitch": true,    /* Отчет об ошибках для падающих случаев в инструкции switch. */
+
+        /* Параметры Разрешения Модуля */
+        "moduleResolution": "node",               /* Укажите стратегию разрешения модуля: "node "(Node.js) или "classic" (TypeScript pre-1.6). */
+        // "baseUrl": "./",                       /* Базовый каталог для разрешения имен модулей, не являющихся абсолютными. */
+        // "paths": {},                           /* Ряд записей, которые повторно сопоставляют импорт в местоположения поиска относительно "baseUrl" */
+        // "rootDirs": [],                        /* Список корневых папок, объединенное содержимое которых представляет структуру проекта во время выполнения. */
+        // "typeRoots": [],                       /* Список папок для включения определений типов. */
+        // "types": [],                           /* Введите файлы объявления, которые будут включены в компиляцию. */
+        "allowSyntheticDefaultImports": true,     /* Разрешить импорт по умолчанию из модулей без экспорта по умолчанию. Это не влияет на код испускающий, просто проверку типа. */
+        "esModuleInterop": true,                  /* Позволяет излучать взаимодействие между модулями CommonJS и ES путем создания объектов пространства имен для всего импорта. Подразумевает подключения по умолчанию */
+        // "preserveSymlinks": true,              /* Не разрешает реальный путь символических ссылок. */
+
+        /* Параметры исходной Map */
+        // "sourceRoot": "./",                    /* Укажите расположение, в котором отладчик должен находить файлы TypeScript вместо исходных расположений. */
+        // "mapRoot": "./",                       /* Укажите расположение, в котором отладчик должен находить файлы map вместо созданных расположений. */
+        // "inlineSourceMap": true,               /* Выделите один файл с исходными maps вместо отдельного файла. */
+        // "inlineSources": true,                 /* Выделите источник вместе с исходными maps в одном файле; требуется установить "--inlineSourceMap " или "--sourceMap". */
+
+        /* Экспериментальные Варианты */
+        // "experimentalDecorators": true,        /* Включает экспериментальную поддержку декораторов ES7 */
+        // "emitDecoratorMetadata": true,         /* Включает экспериментальную поддержку создания метаданных типов для декораторов. */
+
+        /* Расширенные опции */
+        // "declarationDir": "lib"                /* Выходной каталог для сгенерированных файлов объявлений. */
+
+        /* Другие опции */
         "skipLibCheck": true,
-        "strictNullChecks": true,
-        "strictFunctionTypes": true,
-        "strictPropertyInitialization": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "strict": true,
         "forceConsistentCasingInFileNames": true,
-        "module": "esnext",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "noEmit": true,
-        "noUnusedLocals": true,
-        "noImplicitAny": true,
-        "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "noUnusedParameters": true,
-        "jsx": "preserve"
+        "resolveJsonModule": true
     },
     "include": [
         "src"

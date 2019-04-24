@@ -1,11 +1,12 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
+import './scss/style.scss';
+
 const App = () => {
   return (
     <div className="container">
-      Hello Typescript
+      <h1>Hello Typescript</h1>
     </div>
   )
 }
 
-export { App };
+export default App;
